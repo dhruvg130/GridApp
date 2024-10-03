@@ -27,6 +27,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -102,16 +103,17 @@ fun GridItem(topic: Topic, modifier: Modifier = Modifier) {
                         painter = painterResource(R.drawable.ic_grain),
                         contentDescription = null,
                         modifier = Modifier
-                            .padding(start = 16.dp)
+                            .padding(start = 16.dp),
+                        colorFilter = ColorFilter.tint(Color.Black)
                     )
                     Spacer(modifier = Modifier.width(8.dp))
                     Text(
                         text = topic.number.toString(),
-                        modifier = Modifier.padding(top = 8.dp),
+                        modifier = Modifier
+                            .padding(top = 8.dp),
                         style = MaterialTheme.typography.labelMedium
                     )
                 }
-
             }
 
         }
